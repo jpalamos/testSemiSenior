@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  web:
+    restart: always
+    container_name: bostomgym-web
+    build:
+      context: ./web
+    ports:
+      - "8083:80"
+    volumes:
+      - ./web/docker/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./web/build:/usr/share/nginx/html
+
+  backend:
+    build:
+     context: ./backend
+    ports:
+      - "9003:3003"
+    container_name: bostomgym-backend
+    restart: always
+    volumes:
+       - ./backend/uploads:/usr/src/app/uploads
+

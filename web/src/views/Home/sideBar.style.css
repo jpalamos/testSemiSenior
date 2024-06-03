@@ -1,0 +1,179 @@
+:root {
+  --primary-color: #5965f9;
+  --light-rgb: 255, 255, 255;
+  --default-radius: 8px;
+}
+.app-sidebar {
+  width: 15rem;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary-color) 0%, #764ba2 100%);
+  border-inline-end: 1px solid rgba(255, 255, 255, 0.1);
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  font-family: 'Montserrat', sans-serif;
+  /* z-index: 103; */
+  transition: all .05s ease;
+}
+
+.app-sidebar .main-sidebar-header {
+  height: 4.375rem;
+  width: 15rem;
+  position: fixed;
+  display: flex;
+  /* background: linear-gradient(to bottom, var(--primary-color) 0%, #764ba2 100%); */
+  /* z-index: 9; */
+  align-items: center;
+  justify-content: center;
+  padding: 0.813rem 1.25rem;
+  border-inline-end: 1px solid rgba(255, 255, 255, 0.1);
+  border-block-end: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all .05s ease;
+}
+
+.app-sidebar .main-sidebar-header .header-logo img {
+  height: 2rem;
+  line-height: 2rem;
+}
+
+.app-sidebar .slide__category {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.531rem;
+  font-weight: 600;
+  letter-spacing: 0.065rem;
+  text-transform: uppercase;
+  padding: 0.438rem 2.375rem;
+  white-space: nowrap;
+  opacity: 0.5;
+  position: relative;
+  margin-top: 1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+.app-sidebar .slide__category::after {
+  content: "--";
+  position: absolute;
+  inset-inline-start: 23px;
+  top: 7px;
+}
+
+.app-sidebar .slide {
+  margin: 4px 0px;
+  padding: 0rem 0.75rem;
+}
+
+.app-sidebar .side-menu__item {
+  padding: 0.75rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 0.83rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+.app-sidebar .side-menu__item.active,
+.app-sidebar .side-menu__item:hover {
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.app-sidebar .side-menu__item.active .side-menu__label,
+.app-sidebar .side-menu__item.active .side-menu__angle,
+.app-sidebar .side-menu__item:hover .side-menu__label,
+.app-sidebar .side-menu__item:hover .side-menu__angle {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.app-sidebar .side-menu__item.active .side-menu__icon,
+.app-sidebar .side-menu__item:hover .side-menu__icon {
+  fill: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.app-sidebar .slide-menu.child1,
+.app-sidebar .slide-menu.child2,
+.app-sidebar .slide-menu.child3 {
+  .side-menu__item.active {
+    background-color: transparent;
+  }
+}
+
+.app-sidebar .slide-menu,
+.app-sidebar .slide-menu.child1,
+.app-sidebar .slide-menu.child2 {
+  padding: 0rem;
+}
+
+.app-sidebar .slide-menu.child1,
+.app-sidebar .slide-menu.child2,
+.app-sidebar .slide-menu.child3 {
+  .side-menu__item {
+    padding: 0.45rem 1.6rem;
+  }
+}
+
+.app-sidebar .slide-menu.child1,
+.app-sidebar .slide-menu.child2,
+.app-sidebar .slide-menu.child3 {
+  .side-menu__item:before {
+    position: absolute;
+    content: "";
+    width: 0.3rem;
+    height: 0.3rem;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    background-color: transparent;
+    inset-inline-start: 0.5rem;
+    opacity: 0.5;
+  }
+
+  .side-menu__item:hover:before {
+    content: "";
+    border: 1px solid rgba(255, 255, 255, 0.7);
+  }
+
+  .side-menu__item.active:before {
+    position: absolute;
+    content: "";
+    width: 0.3rem;
+    height: 0.3rem;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    background-color: transparent;
+    opacity: 1;
+  }
+}
+
+.app-sidebar .side-menu__label {
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.7);
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.app-sidebar .side-menu__icon {
+  margin-inline-end: 0.875rem;
+  font-size: 1.125rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  fill: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+}
+
+.app-sidebar .side-menu__angle {
+  transform-origin: center;
+  position: absolute;
+  inset-inline-end: 0.75rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all .05s ease;
+}
+
+.app-sidebar .slide.side-menu__label1 {
+  display: none;
+}
